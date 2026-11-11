@@ -1,0 +1,23 @@
+---
+name: michagu-product-scene-stylist
+description: Generate realistic product photography from the user's product image using a user-selected look from their reference photo pool. Use for product lifestyle and scene photography, not packaging redesign or graphic design.
+---
+
+# Product Scene Stylist
+
+The user chooses the photographic style for each new product-image request. Do not select a style on the user's behalf unless they explicitly ask you to choose.
+
+## Workflow
+
+1. When the user provides a product image without naming a style, ask which style they want. Offer the six style families in `references/style-pool.md`, using brief plain-language descriptions and representative reference images. Do not generate before they choose. If they already named a style, skip the question.
+2. After the user selects a style, ask how many images to generate, offering only four choices: 1, 2, 3, or 4. Do not generate until the user chooses a count, unless they already specified one. If style and count are both supplied, proceed without repeating questions.
+3. Treat the product as locked source material. Do not alter its color, shape, dimensions, material appearance, surface graphics, text, logo, seams, openings, accessories, quantity, or arrangement; do not invent, remove, replace, or redraw product details. The product photo is the only authority for product identity. The chosen photo-pool style governs only camera, framing, focus/depth, light, palette, surfaces, and scene atmosphere. Do not infer photographic style from the product brand or packaging and do not use prior brand/design memories or earlier generated outputs as style references.
+4. Within the chosen family, select the closest specific reference by requested shot size, camera angle, subject scale/placement, focus plane, depth of field, and light/shadow geometry. State to yourself the selected file and the features being transferred. Transfer photographic decisions, not the exact layout or props; make a new plausible setting.
+5. Before generation, construct a short shot brief: camera angle and height; shot size; product position and relative scale; props and their front-to-back distances; focus target; light direction and hardness; shadow direction; palette. Keep optical logic consistent: objects at similar camera distances should have similar sharpness. Keep labels legible when product fidelity matters.
+6. For multiple images, plan distinct but related shots before generating. Keep product identity, selected style family, palette, light character, and campaign mood consistent. Vary meaningful photographic parameters across images: camera height/angle, distance/shot size, crop, product orientation only when this does not distort or hide source details, prop placement, and small scene details. Each image must have its own clear shot brief; do not merely rerender the same layout or change one trivial prop. Preserve believable focus and shadow logic in every variation. Generate each distinct image as a separate image request when required by the tool.
+7. When available, use the actual product photo and the chosen pool reference as separate image inputs, explicitly assigning their roles. For strict product fidelity, prefer a workflow that preserves the original product pixels (e.g., isolate/composite the original product over a generated scene or edit only the background) instead of asking a model to redraw the package. Do not claim that a generative reference alone guarantees exact details. If preserving the original product is not technically feasible from the provided photo, explain the limitation and ask for a clean/transparent product image or permission to proceed with a non-exact visual mockup; never present altered packaging as faithful.
+8. Review every visible product detail against the source: colors, silhouette, proportions, materials, text, logo, graphics, seams, accessories, and item count. Reject or correct any invented, omitted, replaced, or mutated product element. Ensure scene props are clearly separate from the product and do not imply that they are included in the package. Also check the selected style's framing, camera angle, subject placement, focus, depth blur, light direction, shadows, realism, and distinction between images in a set. If a major feature failed, revise it specifically or tell the user what remains off.
+
+## Reference catalog
+
+Use `references/style-pool.md` for the six style options, shared visual traits, and all indexed images. The pool has two source folders but style choice is based on photographic features, never folder or brand identity.
